@@ -13,7 +13,7 @@ Input types: text|password|email|tel|number|url|search|color|date|datetime|datet
   var types = 'text|password|email|tel|number|url|search|color|date|datetime|datetime-local|time|month|week|file'.split('|');
 
   //todo: datalist
-  
+
   // generate directives
   angular.forEach(types, function(type) {
     var directiveName = camelCase('editable' + '-' + type);
@@ -49,7 +49,7 @@ Input types: text|password|email|tel|number|url|search|color|date|datetime|datet
                 this.inputEl.parent().prepend(label);
               }
             }
-            
+
             // Add classes to the form
             if (this.attrs.eFormclass) {
               this.editorEl.addClass(this.attrs.eFormclass);
@@ -79,9 +79,18 @@ Input types: text|password|email|tel|number|url|search|color|date|datetime|datet
         render: function() {
           this.parent.render.call(this);
           this.inputEl.after('<output>' + $interpolate.startSymbol() + '$data' + $interpolate.endSymbol()  + '</output>');
-        }        
+        }
+      });
+  }]);
+
+  //'Currency' is specific too
+
+  angular.module('xeditable').directive('editableCurrency', ['editableDirectiveFactory',
+    function(editableDirectiveFactory) {
+      return editableDirectiveFactory({
+        directiveName: 'editableCurrency',
+        inputTpl: '<input type="text" ng-currency-mask>'
       });
   }]);
 
 }());
-

@@ -26,7 +26,8 @@
     "package.json"
   ],
   "dependencies": {
-    "angular": "~1.x"
+    "angular": "~1.x",
+    "ngCurrencyMask": "ng-currency-mask#1.0.7"
   },
   "devDependencies": {
     "angular": "~1.5.0",

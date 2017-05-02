@@ -66,6 +66,7 @@ angular.module('xeditable').factory('editableThemes', function() {
           case 'editableEmail':
           case 'editableTel':
           case 'editableNumber':
+          case 'editableCurrency':
           case 'editableUrl':
           case 'editableSearch':
           case 'editableDate':
@@ -97,7 +98,7 @@ angular.module('xeditable').factory('editableThemes', function() {
         }
       }
     },
-    
+
     //semantic-ui
     'semantic': {
       formTpl:     '<form class="editable-wrap ui form" ng-class="{\'error\': $error}" role="form"></form>',
